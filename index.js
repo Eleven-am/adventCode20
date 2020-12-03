@@ -45,8 +45,8 @@ const day2 = async () => {
         }
     }
 
-    log(46, count);
-    log(47, pos);
+    log(48, count);
+    log(49, pos);
 }
 
 const day2Count = (word, min, max, letter) => {
