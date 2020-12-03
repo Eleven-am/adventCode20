@@ -1,5 +1,5 @@
 const fs = require('fs')
-const {promisify} = require('util')
+const { promisify } = require('util')
 const path = require('path')
 const read = promisify(fs.readFile)
 const log = (line, info) => console.log(line, info)
