@@ -62,7 +62,7 @@ const dat2Pos = (word, min, max, letter) => {
     return (word[min - 1] === letter && word[max - 1] !== letter) || (word[min - 1] !== letter && word[max - 1] === letter);
 }
 
-const day3one = async () => {
+const day3 = async () => {
     let buffer = await readTxt("puzzle3.txt");
 
     let thirdA = countTrees(buffer, 3, 1);
@@ -75,14 +75,12 @@ const day3one = async () => {
     log(75, thirdA * thirdB1 * thirdB3 * thirdB4 * thirdB5);
 }
 
-
 const countTrees = (buffer, xAxis, yAxis) => {
     let i = 0;
     let j = yAxis;
     let count = 0;
     while (j < buffer.length){
         i = i + xAxis >=  buffer[j].length ? xAxis - (buffer[j].length -i) : i + xAxis;
-        console.log(i, j, buffer[j], buffer[j][i]);
         count += buffer[j][i] === "#" ? 1: 0;
         j += yAxis;
     }
