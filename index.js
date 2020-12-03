@@ -62,4 +62,7 @@ const dat2Pos = (word, min, max, letter) => {
     return (word[min - 1] === letter && word[max - 1] !== letter) || (word[min - 1] !== letter && word[max - 1] === letter);
 }
 
-day2()
+const day3one = async () => {
+    let buffer = await readTxt("puzzle2.txt");
+
+}
