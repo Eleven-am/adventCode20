@@ -9,7 +9,7 @@ const day4_1 = async () => {
 
 const day4_2 = async () => {
     let dataSet = await day4_1();
-    let count = 0;
+    let counter = [];
 
     for (const object of dataSet){
         let matches = object.byr.match(/(?<year>\d{4})/);
@@ -54,11 +54,12 @@ const day4_2 = async () => {
 
         matches = object.pid.match(/(?<pid>\d{9})/);
         if (matches !== null) {
-            count++;
+            counter.push(object);
         }
     }
 
-    log(61, count);
+    log(61, counter.length);
+    log(62, counter);
 }
 
 const rebuildBuffer = buffer => {
