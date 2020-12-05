@@ -3,7 +3,7 @@ const { log, readTxt } = require('./reader')
 const day4_1 = async () => {
     let buffer = await readTxt("puzzle4.txt");
     buffer = rebuildBuffer(buffer);
-    log(7, buffer.length);
+    log(6, buffer.length);
     return buffer;
 }
 
@@ -94,5 +94,5 @@ const mapString = phrase => {
     }
 
     let fields  = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
-    return ( fields.every(function (field) { return field in object; })) ? object: false;
+    return ( fields.every( field => { return field in object; })) ? object: false;
 }
