@@ -3,8 +3,7 @@ const { log, readTxt } = require('./reader')
 const day4_1 = async () => {
     let buffer = await readTxt("puzzle4.txt");
     buffer = rebuildBuffer(buffer);
-
-    log(21, buffer.length);
+    log(7, buffer.length);
     return buffer;
 }
 
@@ -59,7 +58,7 @@ const day4_2 = async () => {
         }
     }
 
-    log(78, count);
+    log(61, count);
 }
 
 const rebuildBuffer = buffer => {
