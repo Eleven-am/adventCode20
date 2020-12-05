@@ -69,8 +69,10 @@ const day4_2 = async () => {
             continue;
 
         matches = item.match(/pid:(?<pid>\d{9})/);
-        if (matches !== null)
+        if (matches !== null) {
             count++;
+            log(item)
+        }
     }
 
     log(73, count);
