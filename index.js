@@ -4,15 +4,8 @@ const day4_1 = async () => {
     let buffer = await readTxt("puzzle4.txt");
     buffer = rebuildBuffer(buffer);
 
-    let day4_dataSet = [];
-    for (const item of buffer){
-        let object = mapString(item);
-        if (object !== false)
-            day4_dataSet.push(object)
-    }
-
-    log(21, day4_dataSet.length);
-    return day4_dataSet;
+    log(21, buffer.length);
+    return buffer;
 }
 
 const day4_2 = async () => {
@@ -79,7 +72,8 @@ const rebuildBuffer = buffer => {
             string += buffer[int] + " ";
 
         else {
-            result.push(string);
+            let obj = mapString(string);
+            if (obj !== false) result.push(obj);
             string = "";
         }
 
