@@ -75,7 +75,7 @@ const day4_2 = async () => {
         }
     }
 
-    log(73, count);
+    log(78, count);
 }
 
 const rebuildBuffer = buffer => {
