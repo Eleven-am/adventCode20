@@ -94,5 +94,5 @@ const mapString = phrase => {
     }
 
     let fields  = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
-    return ( fields.every( field => { return field in object; })) ? object: false;
+    return ( fields.every( field => { return field in object; } )) ? object: false;
 }
