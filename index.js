@@ -3,23 +3,15 @@ const { log, readTxt } = require('./reader')
 const day4_1 = async () => {
     let buffer = await readTxt("puzzle4.txt");
     buffer = rebuildBuffer(buffer);
-    let fields  = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
+
     let day4_dataSet = [];
-
-    let count = 0;
-    for (const item of buffer) {
-        let i = 0;
-        let minCount = 0;
-        while (i < 7){
-            minCount += item.includes(fields[i]) ? 1: 0;
-            i++;
-        }
-
-        count += minCount === 7 ? 1: 0;
-        if (minCount === 7) day4_dataSet.push(item);
+    for (const item of buffer){
+        let object = mapString(item);
+        if (object !== false)
+            day4_dataSet.push(object)
     }
 
-    log(21, count);
+    log(21, day4_dataSet.length);
     return day4_dataSet;
 }
 
@@ -27,8 +19,8 @@ const day4_2 = async () => {
     let dataSet = await day4_1();
     let count = 0;
 
-    for (const item of dataSet){
-        let matches = item.match(/byr:(?<year>\d{4})/);
+    for (const object of dataSet){
+        let matches = object.byr.match(/(?<year>\d{4})/);
         if (matches !== null){
             let date = parseInt(matches.groups.year);
             if (!(1920 <= date && date <= 2002))
@@ -36,7 +28,7 @@ const day4_2 = async () => {
         } else
             continue;
 
-        matches = item.match(/iyr:(?<year>\d{4})/);
+        matches = object.iyr.match(/(?<year>\d{4})/);
         if (matches !== null){
             let date = parseInt(matches.groups.year);
             if (!(2010 <= date && date <= 2020))
@@ -44,7 +36,7 @@ const day4_2 = async () => {
         } else
             continue;
 
-        matches = item.match(/eyr:(?<year>\d{4})/);
+        matches = object.eyr.match(/(?<year>\d{4})/);
         if (matches !== null){
             let date = parseInt(matches.groups.year);
             if (!(2020 <= date && date <= 2030))
@@ -52,26 +44,25 @@ const day4_2 = async () => {
         } else
             continue;
 
-        matches = item.match(/hgt:(?<hgt>\d*)(?<unit>cm|in)/);
+        matches = object.hgt.match(/(?<hgt>\d*)(?<unit>cm|in)/);
         if (matches !== null) {
-            let { hgt, unit } = matches.groups;
+            let {hgt, unit} = matches.groups;
             if (!((unit === "cm" && 150 <= parseInt(hgt) && parseInt(hgt) <= 193) || (unit === "in" && 59 <= parseInt(hgt) && parseInt(hgt) <= 76)))
                 continue;
         } else
             continue;
 
-        matches = item.match(/hcl:#(?<hcl>\d{6}|[a-f]{6})/);
+        matches = object.hcl.match(/#(?<hcl>[0-9a-f]{6})/);
         if (matches === null)
             continue;
 
-        matches = item.match(/ecl:(?<ecl>amb|blu|brn|gry|grn|hzl|oth)/);
+        matches = object.ecl.match(/(?<ecl>amb|blu|brn|gry|grn|hzl|oth)/);
         if (matches === null)
             continue;
 
-        matches = item.match(/pid:(?<pid>\d{9})/);
+        matches = object.pid.match(/(?<pid>\d{9})/);
         if (matches !== null) {
             count++;
-            log(74, item);
         }
     }
 
@@ -99,3 +90,16 @@ const rebuildBuffer = buffer => {
 }
 
 day4_2();
+
+const mapString = phrase => {
+    let object = {};
+    let pairs = phrase.split(" ");
+
+    for (const item of pairs){
+        let matches = item.match(/(?<key>\w{3}):(?<value>#[0-9a-z]*|\w*)/);
+        if (matches !== null) object[matches.groups.key] = matches.groups.value;
+    }
+
+    let fields  = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
+    return ( fields.every(function (field) { return field in object; })) ? object: false;
+}
