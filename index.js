@@ -54,7 +54,7 @@ const day4_2 = async () => {
 
         matches = item.match(/hgt:(?<hgt>\d*)(?<unit>cm|in)/);
         if (matches !== null) {
-            let {hgt, unit} = matches.groups;
+            let { hgt, unit } = matches.groups;
             if (!((unit === "cm" && 150 <= parseInt(hgt) && parseInt(hgt) <= 193) || (unit === "in" && 59 <= parseInt(hgt) && parseInt(hgt) <= 76)))
                 continue;
         } else
