@@ -78,3 +78,5 @@ const countTrees = (buffer, xAxis, yAxis) => {
 
     return count;
 }
+
+module.exports = { day1, day2, day3 };

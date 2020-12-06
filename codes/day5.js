@@ -35,4 +35,4 @@ function sort(a, b) {
     return 0;
 }
 
-day5();
+module.exports = day5;

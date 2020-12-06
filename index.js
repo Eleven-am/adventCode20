@@ -81,15 +81,17 @@ const scan2 = grouping => {
         let value = true;
         let int = 0;
 
-        while (int < groups.length - 1){
-            value = rgx.test(groups[int]);
+        while (int < groups.length){
+            if (groups[int] !== "")
+                value = rgx.test(groups[int]);
             int++;
         }
 
         letters += value ? letter: '';
     })
 
+    log(90, letters);
     return letters;
 }
 
-day6_2();
+module.exports = { day6_1, day6_2 };

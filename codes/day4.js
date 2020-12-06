@@ -96,3 +96,5 @@ const mapString = phrase => {
     let fields  = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
     return ( fields.every( field => { return field in object; } )) ? object: false;
 }
+
+module.exports = { day4_1, day4_2 }
