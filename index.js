@@ -31,6 +31,8 @@ const day6_2 = async () => {
         return item.length;
     })
 
+    log(34, length)
+
     let result = length.reduce((result, item) => {
         return result + item;
     })
@@ -73,24 +75,24 @@ const scan = grouping => {
 const scan2 = grouping => {
     let groups = grouping.split(' ');
     let alphabets = "abcdefghijklmnopqrstuvwxyz".split("");
-    let letters = '';
+    let letters = "";
 
     alphabets.forEach( letter => {
-        let rgx = new RegExp(letter, 'g');
-        let value = true;
+        let count = 0;
         let int = 0;
 
         while (int < groups.length){
             if (groups[int] !== "")
-                value = rgx.test(groups[int]);
+                count += groups[int].includes(letter) ? 1: 0;
             int++;
         }
 
-        letters += value ? letter: '';
+        letters += (count === groups.length - 1 )? letter: '';
     })
 
     return letters;
 }
 
+day6_1();
 day6_2();
 module.exports = { day6_1, day6_2 };

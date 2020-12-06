@@ -44,7 +44,7 @@ const day4_2 = async () => {
         } else
             continue;
 
-        matches = object.hcl.match(/#(?<hcl>[0-9a-f]{6})/);
+        matches = object.hcl.match(/^#(?<hcl>[0-9a-f]{6})$/);
         if (matches === null)
             continue;
 
