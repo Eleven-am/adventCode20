@@ -14,11 +14,11 @@ const day5 = async () => {
 
     binaryArray.sort(sort);
 
-    log(19, binaryArray[binaryArray.length - 1]);
+    log(17, binaryArray[binaryArray.length - 1]);
 
     for (let i = 35; i < binaryArray.length + 35; i++){
         let value = binaryArray.find( item => item === i);
-        if (value === undefined) log(22, i);
+        if (value === undefined) log(21, i);
     }
 }
 
