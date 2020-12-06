@@ -35,7 +35,6 @@ const day6_2 = async () => {
         return result + item;
     })
 
-
     log(39, result)
 }
 
@@ -90,8 +89,8 @@ const scan2 = grouping => {
         letters += value ? letter: '';
     })
 
-    log(90, letters);
     return letters;
 }
 
+day6_2();
 module.exports = { day6_1, day6_2 };
