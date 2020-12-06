@@ -6,10 +6,8 @@ const day5 = async () => {
 
     let binaryArray = buffer.map( ticket => {
         if (ticket !== ''){
-            ticket = ticket.replace(/F/g, "0");
-            ticket = ticket.replace(/L/g, "0");
-            ticket = ticket.replace(/B/g, "1");
-            ticket = ticket.replace(/R/g, "1");
+            ticket = ticket.replace(/F|L/g, "0");
+            ticket = ticket.replace(/B|R/g, "1");
             return parseInt(ticket, 2);
         } else return 0;
     })
@@ -34,5 +32,7 @@ function sort(a, b) {
 
     return 0;
 }
+
+day5()
 
 module.exports = day5;
