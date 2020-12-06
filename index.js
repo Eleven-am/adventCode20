@@ -1,4 +1,4 @@
-const { log, readTxt } = require('./reader')
+const { log, readTxt } = require('./codes/reader')
 
 const day6_1 = async () => {
     let buffer = await readTxt("puzzle6.txt");
