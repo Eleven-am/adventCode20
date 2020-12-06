@@ -5,7 +5,7 @@ const read = promisify(fs.readFile)
 const log = (line, info) => console.log(line, info)
 
 const readTxt = async string => {
-    let buffer = await read(path.join(__dirname, 'puzzles/' + string), 'utf8');
+    let buffer = await read(path.join(__dirname, '../puzzles/' + string), 'utf8');
     return buffer.split("\n");
 }
 

@@ -52,7 +52,8 @@ const day4_2 = async () => {
         if (matches === null)
             continue;
 
-        if (confirmPid(object))
+        matches = object.pid.match(/^(?<pid>\d{9})$/);
+        if (matches !== null)
             counter.push(object);
 
     }
@@ -84,7 +85,6 @@ const rebuildBuffer = buffer => {
 day4_2();
 
 const mapString = phrase => {
-    log(107, phrase)
     let object = {};
     let pairs = phrase.split(" ");
 
@@ -95,16 +95,4 @@ const mapString = phrase => {
 
     let fields  = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
     return ( fields.every( field => { return field in object; } )) ? object: false;
-}
-
-const confirmPid = object => {
-    let index = 0;
-    let count = 0;
-
-    while (index < object.pid.length){
-        count += '0' <= object.pid.charAt(index) && object.pid.charAt(index) <= '9' ? 1: 0;
-        index++;
-    }
-
-    return count === 9 && object.pid.length === 9;
 }

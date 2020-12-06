@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46c18173-2f0e-455a-ad42-ba25db9d3cba" name="Default Changelist" comment="fourth day">
-      <change afterPath="$PROJECT_DIR$/day5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzles/puzzle1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzles/puzzle2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzles/puzzle3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzles/puzzle4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzles/puzzle5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puzzles/puzzle6.txt" afterDir="false" />
+    <list default="true" id="46c18173-2f0e-455a-ad42-ba25db9d3cba" name="Default Changelist" comment="Sixth day">
+      <change afterPath="$PROJECT_DIR$/codes/day1-3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codes/day4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codes/day5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codes/reader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/puzzle5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reader.js" beforeDir="false" afterPath="$PROJECT_DIR$/reader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day1-3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/day5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reader.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +75,7 @@
       <updated>1607021506923</updated>
       <workItem from="1607021508060" duration="2410000" />
       <workItem from="1607127205872" duration="9625000" />
-      <workItem from="1607226887359" duration="9995000" />
+      <workItem from="1607226887359" duration="10526000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1607021593318</created>
@@ -230,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607234417810</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Sixth day">
+      <created>1607237550254</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1607237550254</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +253,7 @@
     <MESSAGE value="update" />
     <MESSAGE value="third day" />
     <MESSAGE value="fourth day" />
-    <option name="LAST_COMMIT_MESSAGE" value="fourth day" />
+    <MESSAGE value="Sixth day" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sixth day" />
   </component>
 </project>
