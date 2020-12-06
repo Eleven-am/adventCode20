@@ -1,38 +1,95 @@
 const { log, readTxt } = require('./reader')
 
-const day5_1 = async () => {
-    let buffer = await readTxt("puzzle5.txt");
-    buffer.sort(sort);
+const day6_1 = async () => {
+    let buffer = await readTxt("puzzle6.txt");
+    buffer = reBuildBuffer(buffer);
 
-    let binaryArray = buffer.map( ticket => {
-        if (ticket !== ''){
-            ticket = ticket.replace(/F/g, "0");
-            ticket = ticket.replace(/L/g, "0");
-            ticket = ticket.replace(/B/g, "1");
-            ticket = ticket.replace(/R/g, "1");
-            return parseInt(ticket, 2);
-        } else return 0;
+    let groups = buffer.map( group => {
+        return scan(group);
+    });
+
+    let length = groups.map( item => {
+        return item.length;
     })
 
-    binaryArray.sort(sort);
+    let result = length.reduce((result, item) => {
+        return result + item;
+    })
 
-    log(19, binaryArray[binaryArray.length - 1]);
-
-    for (let i = 35; i < binaryArray.length + 35; i++){
-        let value = binaryArray.find( item => item === i);
-        if (value === undefined) log(22, i);
-    }
+    log(11, result);
 }
 
-function sort(a, b) {
-    if (a < b) {
-        return -1;
-    }
-    if (a > b) {
-        return 1;
-    }
+const day6_2 = async () => {
+    let buffer = await readTxt("puzzle6.txt");
+    buffer = reBuildBuffer(buffer);
 
-    return 0;
+    let groups = buffer.map( group => {
+        return scan2(group);
+    });
+
+    let length = groups.map( item => {
+        return item.length;
+    })
+
+    let result = length.reduce((result, item) => {
+        return result + item;
+    })
+
+
+    log(39, result)
 }
 
-day5_1();
+const reBuildBuffer = buffer => {
+    let result = [];
+    let int = 0;
+
+    let string = "";
+    while (int < buffer.length){
+        if (buffer[int] !== '')
+            string += buffer[int] + ' ';
+
+        else {
+            result.push(string);
+            string = "";
+        }
+
+        int++;
+    }
+
+    return result
+}
+
+const scan = grouping => {
+    let alphabets = "abcdefghijklmnopqrstuvwxyz".split("");
+    let letters = '';
+
+    alphabets.forEach( letter => {
+        let rgx = new RegExp(letter, 'g');
+        letters += rgx.test(grouping) ? letter: '';
+    })
+
+    return letters;
+}
+
+const scan2 = grouping => {
+    let groups = grouping.split(' ');
+    let alphabets = "abcdefghijklmnopqrstuvwxyz".split("");
+    let letters = '';
+
+    alphabets.forEach( letter => {
+        let rgx = new RegExp(letter, 'g');
+        let value = true;
+        let int = 0;
+
+        while (int < groups.length - 1){
+            value = rgx.test(groups[int]);
+            int++;
+        }
+
+        letters += value ? letter: '';
+    })
+
+    return letters;
+}
+
+day6_2();
