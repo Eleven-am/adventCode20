@@ -2,7 +2,6 @@ const { log, readTxt } = require('./reader')
 
 const day5 = async () => {
     let buffer = await readTxt("puzzle5.txt");
-    buffer.sort(sort);
 
     let binaryArray = buffer.map( ticket => {
         if (ticket !== ''){
