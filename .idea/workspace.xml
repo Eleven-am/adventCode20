@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46c18173-2f0e-455a-ad42-ba25db9d3cba" name="Default Changelist" comment="sixth day">
+      <change afterPath="$PROJECT_DIR$/codes/day6.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codes/day4.js" beforeDir="false" afterPath="$PROJECT_DIR$/codes/day4.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
@@ -69,7 +70,7 @@
       <updated>1607021506923</updated>
       <workItem from="1607021508060" duration="2410000" />
       <workItem from="1607127205872" duration="9625000" />
-      <workItem from="1607226887359" duration="15003000" />
+      <workItem from="1607226887359" duration="15148000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1607021593318</created>
@@ -274,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607258463491</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="sixth day">
+      <created>1607261000277</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1607261000277</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

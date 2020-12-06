@@ -82,8 +82,6 @@ const rebuildBuffer = buffer => {
     return result
 }
 
-day4_2();
-
 const mapString = phrase => {
     let object = {};
     let pairs = phrase.split(" ");
