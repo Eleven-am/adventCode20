@@ -1,110 +1,38 @@
 const { log, readTxt } = require('./reader')
 
-const day4_1 = async () => {
-    let buffer = await readTxt("puzzle4.txt");
-    buffer = rebuildBuffer(buffer);
-    log(6, buffer.length);
-    return buffer;
+const day5_1 = async () => {
+    let buffer = await readTxt("puzzle5.txt");
+    buffer.sort(sort);
+
+    let binaryArray = buffer.map( ticket => {
+        if (ticket !== ''){
+            ticket = ticket.replace(/F/g, "0");
+            ticket = ticket.replace(/L/g, "0");
+            ticket = ticket.replace(/B/g, "1");
+            ticket = ticket.replace(/R/g, "1");
+            return parseInt(ticket, 2);
+        } else return 0;
+    })
+
+    binaryArray.sort(sort);
+
+    log(19, binaryArray[binaryArray.length - 1]);
+
+    for (let i = 35; i < binaryArray.length + 35; i++){
+        let value = binaryArray.find( item => item === i);
+        if (value === undefined) log(22, i);
+    }
 }
 
-const day4_2 = async () => {
-    let dataSet = await day4_1();
-    let counter = [];
-
-    for (const object of dataSet){
-        let matches = object.byr.match(/(?<year>\d{4})/);
-        if (matches !== null){
-            let date = parseInt(matches.groups.year);
-            if (!(1920 <= date && date <= 2002))
-                continue;
-        } else
-            continue;
-
-        matches = object.iyr.match(/(?<year>\d{4})/);
-        if (matches !== null){
-            let date = parseInt(matches.groups.year);
-            if (!(2010 <= date && date <= 2020))
-                continue;
-        } else
-            continue;
-
-        matches = object.eyr.match(/(?<year>\d{4})/);
-        if (matches !== null){
-            let date = parseInt(matches.groups.year);
-            if (!(2020 <= date && date <= 2030))
-                continue;
-        } else
-            continue;
-
-        matches = object.hgt.match(/(?<hgt>\d*)(?<unit>cm|in)/);
-        if (matches !== null) {
-            let {hgt, unit} = matches.groups;
-            if (!((unit === "cm" && 150 <= parseInt(hgt) && parseInt(hgt) <= 193) || (unit === "in" && 59 <= parseInt(hgt) && parseInt(hgt) <= 76)))
-                continue;
-        } else
-            continue;
-
-        matches = object.hcl.match(/#(?<hcl>[0-9a-f]{6})/);
-        if (matches === null)
-            continue;
-
-        matches = object.ecl.match(/(?<ecl>amb|blu|brn|gry|grn|hzl|oth)/);
-        if (matches === null)
-            continue;
-
-        if (confirmPid(object))
-            counter.push(object);
-
+function sort(a, b) {
+    if (a < b) {
+        return -1;
+    }
+    if (a > b) {
+        return 1;
     }
 
-    log(63, counter.length);
+    return 0;
 }
 
-const rebuildBuffer = buffer => {
-    let result = [];
-    let int = 0;
-
-    let string = "";
-    while (int < buffer.length){
-        if (buffer[int] !== '')
-            string += buffer[int] + " ";
-
-        else {
-            let obj = mapString(string);
-            if (obj !== false) result.push(obj);
-            string = "";
-        }
-
-        int++;
-    }
-
-    return result
-}
-
-day4_2();
-
-const mapString = phrase => {
-    log(107, phrase)
-    let object = {};
-    let pairs = phrase.split(" ");
-
-    for (const item of pairs){
-        let matches = item.match(/(?<key>\w{3}):(?<value>#[0-9a-z]*|\w*)/);
-        if (matches !== null) object[matches.groups.key] = matches.groups.value;
-    }
-
-    let fields  = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
-    return ( fields.every( field => { return field in object; } )) ? object: false;
-}
-
-const confirmPid = object => {
-    let index = 0;
-    let count = 0;
-
-    while (index < object.pid.length){
-        count += '0' <= object.pid.charAt(index) && object.pid.charAt(index) <= '9' ? 1: 0;
-        index++;
-    }
-
-    return count === 9 && object.pid.length === 9;
-}
+day5_1();

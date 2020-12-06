@@ -6,7 +6,7 @@ const log = (line, info) => console.log(line, info)
 
 const readTxt = async string => {
     let buffer = await read(path.join(__dirname, string), 'utf8');
-    return buffer.split('\n');
+    return buffer.split("\n");
 }
 
 module.exports = {log, readTxt};
