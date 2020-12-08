@@ -49,7 +49,6 @@ const getBagsWithKid = (needle, rules) => {
     return holders.unique();
 }
 
-//6587 < val < 9126
 const getNumbOfBagsWithin = (needle, rules) => {
     let bags = rules[needle];
     let subBags = 0;

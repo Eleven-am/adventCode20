@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="46c18173-2f0e-455a-ad42-ba25db9d3cba" name="Default Changelist" comment="day 7">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codes/day7.js" beforeDir="false" afterPath="$PROJECT_DIR$/codes/day7.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +42,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/codes" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -72,7 +78,7 @@
       <workItem from="1607261838069" duration="105000" />
       <workItem from="1607262012892" duration="5000" />
       <workItem from="1607279917293" duration="655000" />
-      <workItem from="1607431210405" duration="7353000" />
+      <workItem from="1607431210405" duration="7589000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1607021593318</created>
@@ -305,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607438770403</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="day 7">
+      <created>1607439636600</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1607439636600</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
