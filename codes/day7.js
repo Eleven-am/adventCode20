@@ -67,8 +67,8 @@ const day7 =  async () => {
     let gold = 'shiny gold bags';
     let numbers = getBagsWithKid(gold, rules);
     let numbOfBagsWithin = getNumbOfBagsWithin(gold, rules);
-    log(74, numbers.length);
-    log(75, numbOfBagsWithin);
+    log(70, numbers.length);
+    log(71, numbOfBagsWithin);
 }
 
 module.exports = day7;
